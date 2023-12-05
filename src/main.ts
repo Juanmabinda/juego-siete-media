@@ -1,6 +1,7 @@
 import "./style.css";
 
 let puntuacion : number = 0;
+let intentos : number = 1;
 
 const BOTON_DAME_CARTA : HTMLElement | null = document.getElementById("dame-carta");
 const BOTON_ME_PLANTO : HTMLElement | null = document.getElementById("me-planto");
@@ -204,6 +205,8 @@ const reiniciarPuntuacion = () => puntuacion = 0;
 
 
 const comenzarNuevaPartida  = () : void => {
+  intentos++;
+  pintarIntentos(intentos);
   colocarCartaDadaVuelta();
   reiniciarMensajes();
   reiniciarPuntuacion();
@@ -211,6 +214,15 @@ const comenzarNuevaPartida  = () : void => {
   habilitaBotonDameCarta();
   deshabilitaBotonVerCarta();
   deshabilitaBotonMePlanto();
+};
+
+const pintarIntentos = (intentos : number) : void => {
+  const intentosElemento : HTMLElement | null = document.getElementById("intentos");
+
+  if (intentosElemento) {
+    intentosElemento.innerHTML = `Intentos: ${intentos}`;
+  };
+
 };
 
 const queHubieraPasado = () : void => {
