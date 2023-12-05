@@ -151,23 +151,29 @@ const mePlanto = () : void => {
 };
 
 const puntuacionFinal = () : void => {
-  const puntuacionMePlantoElemento : HTMLElement | null = document.getElementById("puntuacion-me-planto");
+
   let mensaje : string = "";
 
   if (puntuacion < 5) {
-    mensaje = "Has sido muy conservador 🥴🥴";
+    mensaje = "Fuiste muy conservador/a! 😝";
   } else if (puntuacion < 6 ) {
-    mensaje = "Te ha entrado el canguelo eh? 🤭🤭🤭";
+    mensaje = "Apa te entró el cagazo, no? 🤭🤭🤭";
   } else if (puntuacion >= 6 && puntuacion <= 7) {
     mensaje = "Casi casi... 🙃🙃🙃";
   } else if (puntuacion === 7.5) {
-    mensaje = "¡Lo has clavado! ¡Enhorabuena! 🎉🎉🎉🎊";
+    mensaje = "Esaaaaa! Felicitaciones!! 🎉🎉🎉🎊";
   }else if(puntuacion > 7.5) {
-    mensaje = "Lo siento, has perdido 😵. Esta vez te has pasado 😅";
+    mensaje = "Perdiste 😵";
     deshabilitaBotonDameCarta();
     deshabilitaBotonMePlanto();
   }
 
+  pintarMensajeFinal(mensaje);
+
+};
+
+const pintarMensajeFinal = (mensaje : string) :void => {
+  const puntuacionMePlantoElemento : HTMLElement | null = document.getElementById("puntuacion-me-planto");
   if (puntuacionMePlantoElemento) {
     puntuacionMePlantoElemento.innerHTML = mensaje;
   };
@@ -212,7 +218,7 @@ const queHubieraPasado = () : void => {
 
   if (puntuacion !== 7.5) {
     if (textoQueHubieraPasado) {
-      textoQueHubieraPasado.innerHTML = "Quieres ver cual hubiera sido la siguiente carta? 👇 "
+      textoQueHubieraPasado.innerHTML = "Querés ver cual hubiera sido la siguiente carta? 👇 "
     };
 
     habilitaBotonVerCarta();
