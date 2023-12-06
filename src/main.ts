@@ -1,5 +1,17 @@
 import "./style.css";
 
+const eventos = () => {
+  BOTON_ME_PLANTO?.addEventListener("click", mePlanto);
+
+  BOTON_DAME_CARTA?.addEventListener("click", function() { dameCarta(generaCartaAleatoria()) } );
+
+  BOTON_NUEVA_PARTIDA?.addEventListener("click", comenzarNuevaPartida);
+
+  BOTON_VER_CARTA?.addEventListener("click", function() { verSiguienteCarta(generaCartaAleatoria()) } );
+};
+
+document.addEventListener("DOMContentLoaded", eventos);
+
 let puntuacion : number = 0;
 let intentos : number = 1;
 
@@ -243,11 +255,3 @@ const verSiguienteCarta = (numero : number) : void => {
     BOTON_VER_CARTA.disabled = true;
   };
 };
-
-BOTON_ME_PLANTO?.addEventListener("click", mePlanto);
-
-BOTON_DAME_CARTA?.addEventListener("click", function() { dameCarta(generaCartaAleatoria()) } );
-
-BOTON_NUEVA_PARTIDA?.addEventListener("click", comenzarNuevaPartida);
-
-BOTON_VER_CARTA?.addEventListener("click", function() { verSiguienteCarta(generaCartaAleatoria()) } );
