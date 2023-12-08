@@ -2,7 +2,7 @@
   "name": "ts-sandbox",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://Juanmabinda.github.io/juego-siete-media/",
+  "homepage": "https://Juanmabinda.github.io/juego-siete-media",
   "type": "module",
   "scripts": {
     "dev": "vite",
