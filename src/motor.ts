@@ -38,41 +38,10 @@ export const dameCarta = (numero : number) : void => {
 };
 
 export const sumarPuntuacion = (numero : number) : number => {
-  switch (numero) {
-    case 1:
-      partida.puntuacion += 1;
-      break;
-    case 2:
-      partida.puntuacion += 2;
-      break;
-    case 3:
-      partida.puntuacion += 3;
-      break;
-    case 4:
-      partida.puntuacion += 4;
-      break;
-    case 5:
-      partida.puntuacion += 5;
-      break;
-    case 6:
-      partida.puntuacion += 6;
-      break;
-    case 7:
-      partida.puntuacion += 7;
-      break;
-    case 10:
-      partida.puntuacion += 0.5;
-      break;
-    case 11:
-      partida.puntuacion += 0.5;
-      break;
-    case 12:
-      partida.puntuacion += 0.5;
-      break;
-    default:
-      partida.puntuacion += 0.5;
-      break;
-    };
+  numero <= 7
+  ? partida.puntuacion += numero
+  : partida.puntuacion += 0.5;
+
   return partida.puntuacion;
 };
 
